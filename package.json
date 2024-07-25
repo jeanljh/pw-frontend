@@ -1,0 +1,25 @@
+{
+  "name": "pw-frontend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "report": "playwright show-report"
+  },
+  "keywords": [
+    "playwright",
+    "typescript",
+    "enkeylabs/dappwright"
+  ],
+  "author": "jean",
+  "license": "ISC",
+  "description": "example of playwright test for web3 app with metamask wallet connection",
+  "devDependencies": {
+    "@playwright/test": "^1.45.3",
+    "@types/node": "^20.14.12",
+    "dotenv": "^16.4.5"
+  },
+  "dependencies": {
+    "@tenkeylabs/dappwright": "^2.8.5"
+  }
+}
