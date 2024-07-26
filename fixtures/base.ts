@@ -4,7 +4,7 @@ import Connect from "../tests/components/connect.modal";
 import Account from "../tests/components/account.menu";
 import Portfolio from "../tests/pages/portfolio.page";
 import Transfer from "../tests/components/transfer.modal";
-import user from "./data";
+import { user } from "./data";
 
 export const test = baseTest.extend<{
   context: BrowserContext

@@ -1,5 +1,5 @@
 import { test, expect } from '../fixtures/base'
-import user from '../fixtures/data';
+import { user, transferData } from '../fixtures/data';
 import Utils from './helpers/utils';
 
 test.describe('Test Suite - Transfer', () => {
@@ -36,7 +36,8 @@ test.describe('Test Suite - Transfer', () => {
       return await transfer.inputDestination.inputValue()
     }).toBe(user.receiverChain)
 
-    await transfer.inputAmount.fill('0.0001')
+    await transfer.inputAmount.fill(transferData.amount)
+    await transfer.inputMemo.fill(transferData.memo)
     await transfer.buttonConfirmTransfer.click()
     await transfer.dialogTransfer.waitFor({ state: 'hidden' })
 

@@ -5,4 +5,7 @@ export const user = {
     receiverChain: process.env.RECEIVER_CHAIN as string
 }
 
-export default user
+export const transferData = {
+    amount: '0.0001',
+    memo: 'dummy'
+}
