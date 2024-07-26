@@ -37,8 +37,6 @@ export default defineConfig({
     actionTimeout: 30 * 1000,
     /* Base URL to use in actions like `await page.goto('/')`. */
     baseURL: 'https://v4.testnet.dydx.exchange/',
-    /* Run tests in headless */
-    headless: true,
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
   },

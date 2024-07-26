@@ -19,7 +19,7 @@ jobs:
     - name: install playwright dependencies
       run: npx playwright install --with-deps
     - name: run playwright test
-      run: npm test
+      run: xvfb-run --auto-servernum -- npm test
       env:
         SEED_PHRASE: ${{ secrets.SEED_PHRASE }}
         PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}

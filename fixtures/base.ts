@@ -19,7 +19,7 @@ export const test = baseTest.extend<{
       wallet: 'metamask',
       version: MetaMaskWallet.recommendedVersion,
       seed: user.seedPhrase,
-      headless: true,
+      headless: false,
     })
 
     await wallet.switchNetwork('Sepolia')
