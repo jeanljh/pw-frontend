@@ -10,7 +10,7 @@ test.describe('Test Suite - Transfer', () => {
     await connect.connectMetamask()
   })
 
-  test('Portfolio > Transfer | E2E transfer', async ({ wallet, page, connect, account, portfolio, transfer }) => {
+  test('E2E - Portfolio > Transfer', async ({ wallet, page, connect, account, portfolio, transfer }) => {
     // format dYdX chain address
     const senderChain = Utils.formatChainAddress(user.senderChain)
     const receiverChain = Utils.formatChainAddress(user.receiverChain)
