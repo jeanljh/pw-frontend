@@ -51,7 +51,7 @@ test.describe('Test Suite - Transfer', () => {
     await connect.connectMetamask()
  
     // verify the current Dv4TNT balance for receiver account shows the added amount received from the sender
-    const updateBalance = (currentBalance + 0.0001).toFixed(4)
+    const updateBalance = (currentBalance + parseFloat(transferData.amount)).toFixed(4)
     await account.textChainAddress(receiverChain).click()
     await expect.poll(async () => parseFloat(await account.textDv4tntBalance.textContent() as string).toFixed(4), { timeout: 5000 }).toBe(updateBalance)
   })
