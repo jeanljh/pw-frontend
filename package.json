@@ -20,6 +20,6 @@
     "dotenv": "^16.4.5"
   },
   "dependencies": {
-    "@tenkeylabs/dappwright": "^2.8.5"
+    "@tenkeylabs/dappwright": "^2.8.6"
   }
 }
