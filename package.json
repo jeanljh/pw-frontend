@@ -16,10 +16,10 @@
   "description": "example of playwright test for web3 app with metamask wallet connection",
   "devDependencies": {
     "@playwright/test": "^1.48.2",
-    "@types/node": "^22.0.2",
+    "@types/node": "^22.8.6",
     "dotenv": "^16.4.5"
   },
   "dependencies": {
-    "@tenkeylabs/dappwright": "^2.8.5"
+    "@tenkeylabs/dappwright": "^2.8.6"
   }
 }
