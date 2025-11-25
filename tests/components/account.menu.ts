@@ -1,13 +1,15 @@
 import { Page, Locator } from '../../fixtures/base'
 
 export default class Account {
-    buttonConnectWallet: Locator
+    buttonSignIn: Locator
+    buttonMetaMask: Locator
     textDv4tntBalance: Locator
     menuItemDisconnect: Locator
     buttonDisconnect: Locator
     
     constructor(readonly page: Page) {
-        this.buttonConnectWallet = page.getByRole('banner').getByRole('button', { name: /Connect wallet/ })
+        this.buttonSignIn = page.getByRole('banner').getByRole('button', { name: /Sign in/ })
+        this.buttonMetaMask = page.getByRole('button', { name: /MetaMask/ })
         this.textDv4tntBalance = page.getByText('Dv4TNT Balance').locator('+ output')
         this.menuItemDisconnect = page.getByRole('menuitem', { name: /Disconnect/ })
         this.buttonDisconnect = page.getByRole('button', { name: /Disconnect/ })

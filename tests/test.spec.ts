@@ -6,7 +6,8 @@ test.describe('Test Suite - Transfer', () => {
   test.beforeEach(async ({ page, connect, account }) => {
     // go to dYdX testnet and connect with MetaMask wallet for receiver account
     await page.goto('')
-    await account.buttonConnectWallet.click()
+    await account.buttonSignIn.click()
+    await account.buttonMetaMask.click()
     await connect.connectMetamask()
   })
 
@@ -21,9 +22,9 @@ test.describe('Test Suite - Transfer', () => {
     await account.disconnectAccount()
 
     // switch to sender account in MetaMask wallet and connect again
-    await wallet.switchAccount(1)
+    await wallet.switchAccount('Account 1')
     await page.bringToFront()
-    await account.buttonConnectWallet.click()
+    await account.buttonSignIn.click()
     await connect.connectMetamask()
 
     // go to Portfolio page to transfer a Dv4TNT amount to receiver account
@@ -45,14 +46,20 @@ test.describe('Test Suite - Transfer', () => {
     await account.disconnectAccount()
 
     // switch to receiver account in MetaMask wallet and connect again
-    await wallet.switchAccount(2)
+    await wallet.switchAccount('Account 2')
     await page.bringToFront()
-    await account.buttonConnectWallet.click()
+    await account.buttonSignIn.click()
     await connect.connectMetamask()
  
     // verify the current Dv4TNT balance for receiver account shows the added amount received from the sender
     const updateBalance = (currentBalance + parseFloat(transferData.amount)).toFixed(4)
-    await account.textChainAddress(receiverChain).click()
-    await expect.poll(async () => parseFloat(await account.textDv4tntBalance.textContent() as string).toFixed(4), { timeout: 5000 }).toBe(updateBalance)
+
+    await expect.poll(async () => {
+      await account.textChainAddress(receiverChain).click()
+      await page.waitForTimeout(1000)
+      const currentBalance = parseFloat(await account.textDv4tntBalance.textContent() as string).toFixed(4)
+      await page.reload()
+      return currentBalance
+    }, { timeout: 5000 }).toBe(updateBalance)
   })
 })
