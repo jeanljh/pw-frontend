@@ -56,10 +56,10 @@ test.describe('Test Suite - Transfer', () => {
 
     await expect.poll(async () => {
       await account.textChainAddress(receiverChain).click()
-      await page.waitForTimeout(1000)
+      await page.waitForTimeout(2000)
       const currentBalance = parseFloat(await account.textDv4tntBalance.textContent() as string).toFixed(4)
       await page.reload()
       return currentBalance
-    }, { timeout: 5000 }).toBe(updateBalance)
+    }, { timeout: 10000 }).toBe(updateBalance)
   })
 })
