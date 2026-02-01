@@ -15,7 +15,7 @@
   "license": "ISC",
   "description": "example of playwright test for web3 app with metamask wallet connection",
   "devDependencies": {
-    "@playwright/test": "^1.48.2",
+    "@playwright/test": "^1.58.1",
     "@types/node": "^24.10.1",
     "dotenv": "^17.2.3"
   },
