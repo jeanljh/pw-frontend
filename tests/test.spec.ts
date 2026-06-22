@@ -30,6 +30,7 @@ test.describe('Test Suite - Transfer', () => {
     // go to Portfolio page to transfer a Dv4TNT amount to receiver account
     await portfolio.linkPortfolio.click()
     await page.waitForTimeout(2000)
+    await portfolio.buttonClose.click()
     await portfolio.buttonTransfer.click()
 
     await expect.poll(async () => {
@@ -46,7 +47,7 @@ test.describe('Test Suite - Transfer', () => {
     await account.disconnectAccount()
 
     // switch to receiver account in MetaMask wallet and connect again
-    await wallet.switchAccount('Account 2')
+    await wallet.switchAccount('Imported Account 1')
     await page.bringToFront()
     await account.buttonSignIn.click()
     await connect.connectMetamask()
